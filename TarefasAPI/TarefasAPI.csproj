@@ -14,8 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\" />
-    <Folder Include="Extensoes\" />
     <Folder Include="Respositorios\Interaces\" />
     <Folder Include="Servicos\Interaces\" />
   </ItemGroup>

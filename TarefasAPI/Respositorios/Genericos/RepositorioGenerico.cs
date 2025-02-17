@@ -11,6 +11,7 @@ public class RepositorioGenerico<T, K>(AppDbContext appDbContext) : IRepositorio
     public T Atualizar(T entidade)
     {
         _appDbContext.Set<T>().Update(entidade);
+        _appDbContext.SaveChanges();
         return entidade;
     }
 
@@ -24,12 +25,14 @@ public class RepositorioGenerico<T, K>(AppDbContext appDbContext) : IRepositorio
     public async Task<T> CriarAsync(T entidade)
     {
         await _appDbContext.Set<T>().AddAsync(entidade);
+        await _appDbContext.SaveChangesAsync();
         return entidade;
     }
 
     public T Deletar(T entidade)
     {
         _appDbContext.Set<T>().Remove(entidade);
+        _appDbContext.SaveChanges();
         return entidade;
     }
 }
